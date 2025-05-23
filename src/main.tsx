@@ -1,13 +1,14 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, Link, RouterProvider } from 'react-router-dom'
 import DashboardLayoud from './components/layouts/Dashboard-layout'
+import ContenCreate from './components/dashboard/ContentCreate'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <div>Hello</div>
+    element: <Link to={'/dashboard'}>Dashboard</Link>
   },
   {
     path: '/registor',
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <h1>Dashboard main page</h1>
+        element: <ContenCreate/>
       }
     ]
   }
